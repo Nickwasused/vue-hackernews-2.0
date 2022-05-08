@@ -1,5 +1,6 @@
 <template>
   <div class="item-view" v-if="item">
+    <div class="headspacer"></div>
     <template v-if="item">
       <div class="item-view-header">
         <a :href="item.url" target="_blank" rel="noopener noreferrer">
