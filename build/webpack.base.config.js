@@ -11,7 +11,8 @@ module.exports = {
     : 'eval-source-map',
     output: {
       path: path.resolve(__dirname, '../dist'),
-      filename: '[name].[contenthash].js'
+      filename: '[name].[contenthash].js',
+      publicPath: '/'
   },
   mode,
   resolve: {
