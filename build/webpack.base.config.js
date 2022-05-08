@@ -1,5 +1,4 @@
 const path = require('path')
-const webpack = require('webpack')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { VueLoaderPlugin } = require('vue-loader')
 
@@ -12,7 +11,8 @@ module.exports = {
     : 'eval-source-map',
     output: {
       path: __dirname + '/../../assets',
-      assetModuleFilename: 'images/[name]-[contenthash][ext]',
+      publicPath: '/dist/',
+      filename: '[name].[contenthash][ext]'
   },
   mode,
   resolve: {

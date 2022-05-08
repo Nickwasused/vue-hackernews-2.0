@@ -6,7 +6,7 @@ const chokidar = require('chokidar')
 const clientConfig = require('./webpack.client.config')
 const serverConfig = require('./webpack.server.config')
 
-const readFile = (fs, file) => {
+function readFile(fs, file) {
   try {
     return fs.readFileSync(path.join(clientConfig.output.path, file), 'utf-8')
   } catch (e) {}
@@ -48,8 +48,7 @@ module.exports = function setupDevServer (app, templatePath, cb) {
   const clientCompiler = webpack(clientConfig)
   const devMiddleware = require('webpack-dev-middleware')(clientCompiler, {
     publicPath: clientConfig.output.publicPath,
-    serverSideRender: true,
-    noInfo: true
+    serverSideRender: true
   })
   app.use(devMiddleware)
 
@@ -60,7 +59,7 @@ module.exports = function setupDevServer (app, templatePath, cb) {
     stats.warnings.forEach(err => console.warn(err))
     if (stats.errors.length) return
     clientManifest = JSON.parse(readFile(
-      devMiddleware.fileSystem,
+      fs,
       'vue-ssr-client-manifest.json'
     ))
     update()
