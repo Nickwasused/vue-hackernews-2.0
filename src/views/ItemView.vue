@@ -94,9 +94,11 @@ function fetchComments (store, item) {
 
 <style lang="stylus">
 .item-view-header
-  background-color #fff
+  background-color #343a40
   padding 1.8em 2em 1em
   box-shadow 0 1px 2px rgba(0,0,0,.1)
+  a
+    color white
   h1
     display inline
     font-size 1.5em
@@ -105,12 +107,14 @@ function fetchComments (store, item) {
   .host, .meta, .meta a
     color #828282
   .meta a
+    color white
     text-decoration underline
 
 .item-view-comments
-  background-color #fff
+  background-color #343a40
   margin-top 10px
   padding 0 2em .5em
+  color white
 
 .item-view-comments-header
   margin 0

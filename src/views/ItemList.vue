@@ -104,10 +104,11 @@ export default {
   padding-top 45px
 
 .news-list-nav, .news-list
-  background-color #fff
+  background-color #343a40
   border-radius 2px
 
 .news-list-nav
+  color white
   padding 15px 30px
   position fixed
   text-align center
@@ -118,8 +119,9 @@ export default {
   box-shadow 0 1px 2px rgba(0,0,0,.1)
   a
     margin 0 1em
+    color white
   .disabled
-    color #ccc
+    color #4f4f4f
 
 .news-list
   position absolute

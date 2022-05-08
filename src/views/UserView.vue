@@ -43,8 +43,9 @@ export default {
 
 <style lang="stylus">
 .user-view
-  background-color #fff
+  background-color #343a40
   box-sizing border-box
+  color white
   padding 2em 3em
   h1
     margin 0
@@ -59,4 +60,5 @@ export default {
     margin 1em 0
   .links a
     text-decoration underline
+    color white
 </style>

@@ -52,7 +52,7 @@ export default {
   .by
     color #828282
     a
-      color #828282
+      color #f60
       text-decoration underline
   .text
     overflow-wrap break-word

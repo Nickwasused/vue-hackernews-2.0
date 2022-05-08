@@ -3,7 +3,7 @@
     <span class="score">{{ item.score }}</span>
     <span class="title">
       <template v-if="item.url">
-        <a :href="item.url" target="_blank" rel="noopener">{{ item.title }}</a>
+        <router-link :to="'/item/' + item.id">{{ item.title }}</router-link>
         <span class="host"> ({{ item.url | host }})</span>
       </template>
       <template v-else>
@@ -41,11 +41,13 @@ export default {
 
 <style lang="stylus">
 .news-item
-  background-color #fff
-  padding 20px 30px 20px 80px
+  background-color #343a40
+  padding 2% 1.5% 2% 7%
   border-bottom 1px solid #eee
   position relative
   line-height 20px
+  a 
+    color white
   .score
     color #ff6600
     font-size 1.1em
@@ -58,9 +60,9 @@ export default {
     margin-top -10px
   .meta, .host
     font-size .85em
-    color #828282
+    color white
     a
-      color #828282
+      color #999999
       text-decoration underline
       &:hover
         color #ff6600

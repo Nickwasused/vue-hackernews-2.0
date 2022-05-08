@@ -10,7 +10,7 @@
         <router-link to="/show">Show</router-link>
         <router-link to="/ask">Ask</router-link>
         <router-link to="/job">Jobs</router-link>
-        <a class="github" href="https://github.com/vuejs/vue-hackernews-2.0" target="_blank" rel="noopener">
+        <a class="github" href="https://github.com/nickwasused/vue-hackernews-2.0" target="_blank" rel="noopener">
           Built with Vue.js
         </a>
       </nav>
@@ -27,8 +27,8 @@ body
   font-size 15px
   background-color lighten(#eceef1, 30%)
   margin 0
-  padding-top 55px
-  color #34495e
+  padding-top 2.90%
+  background-color #252525
   overflow-y scroll
 
 a
@@ -77,7 +77,7 @@ a
   vertical-align middle
 
 .view
-  max-width 800px
+  max-width 60vw
   margin 0 auto
   position relative
 
