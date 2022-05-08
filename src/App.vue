@@ -24,7 +24,7 @@
 <style lang="stylus">
 body
   font-family -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  font-size 15px
+  font-size 1rem
   background-color lighten(#eceef1, 30%)
   margin 0
   padding-top 2.90%
