@@ -66,4 +66,18 @@ export default {
       text-decoration underline
       &:hover
         color #ff6600
+
+@media (max-width 1500px)
+  .news-item
+    padding-left 10%
+
+@media (max-width 1100px)
+  .news-item
+    padding-left 15%
+
+@media (max-width 400px)
+  .score
+    visibility hidden
+  .news-item
+    padding-left 1%
 </style>

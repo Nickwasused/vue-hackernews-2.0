@@ -90,6 +90,9 @@ a
 @media (max-width 860px)
   .header .inner
     padding 15px 30px
+  
+  .view
+    max-width 95vw
 
 @media (max-width 600px)
   .header
