@@ -102,4 +102,24 @@ a
       margin-right 1em
     .github
       display none
+
+@media (max-width 1200px)
+  body
+    padding-top 4%
+
+@media (max-width 800px)
+  body
+    padding-top 6%
+
+@media (max-width 600px)
+  body
+    padding-top 10%
+
+@media (max-width 520px)
+  body
+    padding-top 15%
+
+@media (max-width 350px)
+  body
+    padding-top 20%
 </style>
