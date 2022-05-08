@@ -1,7 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const { VueLoaderPlugin } = require('vue-loader')
 
 const isProd = process.env.NODE_ENV === 'production'
@@ -10,11 +9,10 @@ const mode = process.env.NODE_ENV || 'development';
 module.exports = {
   devtool: isProd
     ? false
-    : '#cheap-module-source-map',
-  output: {
-    path: path.resolve(__dirname, '../dist'),
-    publicPath: '/dist/',
-    filename: '[name].[chunkhash].js'
+    : 'eval-source-map',
+    output: {
+      path: __dirname + '/../../assets',
+      assetModuleFilename: 'images/[name]-[contenthash][ext]',
   },
   mode,
   resolve: {
@@ -56,7 +54,7 @@ module.exports = {
         options: {
           limit: 10000,
           esModule: false,
-          name: '[name].[ext]?[hash]'
+          name: '[name].[ext]?[contenthash]'
         }
       },
       {
@@ -95,7 +93,6 @@ module.exports = {
       ]
     : [
         new VueLoaderPlugin(),
-        new MiniCssExtractPlugin({}),
-        new FriendlyErrorsPlugin()
+        new MiniCssExtractPlugin({})
       ]
 }
