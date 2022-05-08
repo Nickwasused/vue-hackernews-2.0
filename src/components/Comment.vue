@@ -56,6 +56,8 @@ export default {
       text-decoration underline
   .text
     overflow-wrap break-word
+    a
+      color #f60
     a:hover
       color #ff6600
     pre
