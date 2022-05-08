@@ -10,9 +10,8 @@ module.exports = {
     ? false
     : 'eval-source-map',
     output: {
-      path: __dirname + '/../../assets',
-      publicPath: '/dist/',
-      filename: '[name].[contenthash][ext]'
+      path: path.resolve(__dirname, '../dist'),
+      filename: '[name].[contenthash].js'
   },
   mode,
   resolve: {
