@@ -6,7 +6,7 @@ const chokidar = require('chokidar')
 const clientConfig = require('./webpack.client.config')
 const serverConfig = require('./webpack.server.config')
 
-function readFile(fs, file) {
+const readFile = (fs, file) => {
   try {
     return fs.readFileSync(path.join(clientConfig.output.path, file), 'utf-8')
   } catch (e) {}
@@ -50,9 +50,9 @@ module.exports = function setupDevServer (app, templatePath, cb) {
     publicPath: clientConfig.output.publicPath,
     serverSideRender: true
   })
+
   app.use(devMiddleware)
 
-  
   clientCompiler.hooks.done.tap('vue-hmr', stats => {
     stats = stats.toJson()
     stats.errors.forEach(err => console.error(err))

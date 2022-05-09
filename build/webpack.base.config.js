@@ -3,12 +3,11 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { VueLoaderPlugin } = require('vue-loader')
 
 const isProd = process.env.NODE_ENV === 'production'
-const mode = process.env.NODE_ENV || 'development';
+const mode = process.env.NODE_ENV || 'development'
 // https://www.namecheap.com/blog/production-ready-vue-ssr-in-5-simple-steps/
 module.exports = {
-  devtool: isProd
-    ? false
-    : 'eval-source-map',
+  devtool: 
+    'eval-source-map',
     output: {
       path: path.resolve(__dirname, '../dist'),
       filename: '[name].[contenthash].js',
@@ -73,7 +72,8 @@ module.exports = {
                 require("postcss-import"),
                 //require("tailwindcss"),
                 require("autoprefixer")
-              ]
+              ],
+              allChunks: true
             }
           } 
         ],
