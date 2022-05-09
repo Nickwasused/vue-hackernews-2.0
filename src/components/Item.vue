@@ -22,7 +22,7 @@
           {{ item.time | timeAgo }} ago
         </span>
         <span v-if="item.type !== 'job'" class="comments-link">
-          | <router-link :to="'/item/' + item.id">{{ item.descendants }} comments</router-link>
+          | {{ item.descendants }} comments
         </span>
       </span>
       <span class="label" v-if="item.type !== 'story'">{{ item.type }}</span>
