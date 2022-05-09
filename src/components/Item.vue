@@ -1,28 +1,34 @@
 <template>
   <li class="news-item">
-    <span class="score">{{ item.score }}</span>
-    <span class="title">
-      <template v-if="item.url">
-        <router-link :to="'/item/' + item.id">{{ item.title }}</router-link>
-        <span class="host"> ({{ item.url | host }})</span>
-      </template>
-      <template v-else>
-        <router-link :to="'/item/' + item.id">{{ item.title }}</router-link>
-      </template>
+    <span class="mainscore">
+      <span class="score">{{ item.score }}</span>
     </span>
-    <br>
-    <span class="meta">
-      <span v-if="item.type !== 'job'" class="by">
-        by <router-link :to="'/user/' + item.by">{{ item.by }}</router-link>
+    <span class="mainspacer"></span>
+    <span class="mainitem">
+      <span class="title">
+        <template v-if="item.url">
+          <router-link :to="'/item/' + item.id">{{ item.title }}</router-link>
+          <span class="host"> ({{ item.url | host }})</span>
+        </template>
+        <template v-else>
+          <router-link :to="'/item/' + item.id">{{ item.title }}</router-link>
+        </template>
       </span>
-      <span class="time">
-        {{ item.time | timeAgo }} ago
+      <br>
+      <span class="meta">
+        <span v-if="item.type !== 'job'" class="by">
+          by <router-link :to="'/user/' + item.by">{{ item.by }}</router-link>
+        </span>
+        <span class="time">
+          {{ item.time | timeAgo }} ago
+        </span>
+        <span v-if="item.type !== 'job'" class="comments-link">
+          | {{ item.descendants }} comments
+        </span>
       </span>
-      <span v-if="item.type !== 'job'" class="comments-link">
-        | <router-link :to="'/item/' + item.id">{{ item.descendants }} comments</router-link>
-      </span>
+      <span class="label" v-if="item.type !== 'story' && item.type !== 'job'">{{ item.type }}</span>
+      <span class="label" v-if="item.type == 'job'"><span class="job">{{ item.type }}</span></span>
     </span>
-    <span class="label" v-if="item.type !== 'story'">{{ item.type }}</span>
   </li>
 </template>
 
@@ -40,24 +46,32 @@ export default {
 </script>
 
 <style lang="stylus">
+.mainitem
+  flex 96%
+  display inline-block
+
+.mainscore
+  flex 3%
+  display inline-block
+  text-align right
+
+.mainspacer
+  flex 1%
+
 .news-item
+  display flex
   background-color #343a40
-  padding 2% 1.5% 2% 7%
+  padding 1.5%
   border-bottom 1px solid #eee
   position relative
-  line-height 20px
+  line-height 22px
   a 
     color white
   .score
+    width 100%
     color #ff6600
     font-size 1.1em
     font-weight 700
-    position absolute
-    top 50%
-    left 0
-    width 80px
-    text-align center
-    margin-top -10px
   .meta, .host
     font-size .85em
     color white
@@ -67,17 +81,25 @@ export default {
       &:hover
         color #ff6600
 
-@media (max-width 1500px)
-  .news-item
-    padding-left 10%
+.job {
+  color white
+  background-color #f60
+  padding 0.1%
+  margin 0.1%
+}
 
-@media (max-width 1100px)
-  .news-item
-    padding-left 15%
+@media (max-width 1400px)
+  .mainitem
+    width 93%
 
-@media (max-width 400px)
-  .score
+  .mainscore
+    width 7%
+
+@media (max-width 600px)
+  .mainitem
+    width 100%
+
+  .mainscore
+    width 0%
     visibility hidden
-  .news-item
-    padding-left 1%
 </style>
