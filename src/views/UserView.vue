@@ -1,6 +1,5 @@
 <template>
   <div class="user-view">
-    <div class="headspacer"></div>
     <template v-if="user">
       <h1>User : {{ user.id }}</h1>
       <ul class="meta">
@@ -9,8 +8,8 @@
         <li v-if="user.about" v-html="user.about" class="about"></li>
       </ul>
       <p class="links">
-        <a :href="'https://news.ycombinator.com/submitted?id=' + user.id" target="_blank" rel="noopener noreferrer">submissions</a> |
-        <a :href="'https://news.ycombinator.com/threads?id=' + user.id" target="_blank" rel="noopener noreferrer">comments</a>
+        <a :href="'https://news.ycombinator.com/submitted?id=' + user.id">submissions</a> |
+        <a :href="'https://news.ycombinator.com/threads?id=' + user.id">comments</a>
       </p>
     </template>
     <template v-else-if="user === false">

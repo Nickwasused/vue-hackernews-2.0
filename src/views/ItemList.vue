@@ -7,7 +7,6 @@
       <router-link v-if="hasMore" :to="'/' + type + '/' + (page + 1)">more &gt;</router-link>
       <a v-else class="disabled">more &gt;</a>
     </div>
-    <div class="headspacer"></div>
     <transition :name="transition">
       <div class="news-list" :key="displayedPage" v-if="displayedPage > 0">
         <transition-group tag="ul" name="item">
@@ -113,7 +112,6 @@ export default {
   padding 15px 30px
   position fixed
   text-align center
-  height 2vh
   top 55px
   left 0
   right 0
@@ -127,6 +125,7 @@ export default {
 
 .news-list
   position absolute
+  margin 30px 0
   width 100%
   transition all .5s cubic-bezier(.55,0,.1,1)
   ul

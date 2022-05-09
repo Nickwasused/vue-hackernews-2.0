@@ -48,18 +48,19 @@ module.exports = function setupDevServer (app, templatePath, cb) {
   const clientCompiler = webpack(clientConfig)
   const devMiddleware = require('webpack-dev-middleware')(clientCompiler, {
     publicPath: clientConfig.output.publicPath,
-    serverSideRender: true
+    serverSideRender: true,
+    noInfo: true
   })
-
   app.use(devMiddleware)
 
+  
   clientCompiler.hooks.done.tap('vue-hmr', stats => {
     stats = stats.toJson()
     stats.errors.forEach(err => console.error(err))
     stats.warnings.forEach(err => console.warn(err))
     if (stats.errors.length) return
     clientManifest = JSON.parse(readFile(
-      fs,
+      devMiddleware.fileSystem,
       'vue-ssr-client-manifest.json'
     ))
     update()

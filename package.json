@@ -4,7 +4,7 @@
   "author": "Evan You <yyx990803@gmail.com>",
   "private": true,
   "scripts": {
-    "dev": "cross-env NODE_ENV=development node --openssl-legacy-provider server",
+    "dev": "cross-env NODE_OPTIONS=--openssl-legacy-provider node server",
     "start": "cross-env NODE_ENV=production node server",
     "build": "rimraf dist && npm run build:client && npm run build:server",
     "build:client": "cross-env NODE_ENV=production NODE_OPTIONS=--openssl-legacy-provider webpack --config build/webpack.client.config.js --progress",
@@ -22,8 +22,7 @@
     "express": "^4.16.2",
     "firebase": "7.20.0",
     "lru-cache": "^5.1.1",
-    "memory-fs": "^0.5.0",
-    "mini-css-extract-plugin": "^2.6.0",
+    "mini-css-extract-plugin": "^0.9.0",
     "postcss-import": "^12.0.1",
     "postcss-loader": "^3.0.0",
     "route-cache": "0.4.4",
@@ -44,17 +43,18 @@
     "chokidar": "^3.5.3",
     "css-loader": "^3.4.2",
     "file-loader": "^5.0.2",
+    "friendly-errors-webpack-plugin": "^1.6.1",
     "rimraf": "^3.0.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1",
     "url-loader": "^3.0.0",
     "vue-loader": "^15.3.0",
     "vue-template-compiler": "^2.5.22",
-    "webpack": "^5.72.0",
+    "webpack": "^4.41.5",
     "webpack-cli": "^4.9.2",
-    "webpack-dev-middleware": "^5.3.1",
-    "webpack-hot-middleware": "^2.25.1",
-    "webpack-merge": "^5.8.0",
-    "webpack-node-externals": "^3.0.0"
+    "webpack-dev-middleware": "^3.7.2",
+    "webpack-hot-middleware": "^2.20.0",
+    "webpack-merge": "^4.2.1",
+    "webpack-node-externals": "^1.7.2"
   }
 }

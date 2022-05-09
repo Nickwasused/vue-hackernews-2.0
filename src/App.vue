@@ -27,15 +27,13 @@ body
   font-size 1rem
   background-color lighten(#eceef1, 30%)
   margin 0
+  padding-top 2.90%
   background-color #252525
   overflow-y scroll
 
 a
   color #34495e
   text-decoration none
-
-.headspacer
-  height 7vh
 
 .header
   background-color #ff6600
@@ -104,4 +102,24 @@ a
       margin-right 1em
     .github
       display none
+
+@media (max-width 1200px)
+  body
+    padding-top 4%
+
+@media (max-width 800px)
+  body
+    padding-top 6%
+
+@media (max-width 600px)
+  body
+    padding-top 10%
+
+@media (max-width 520px)
+  body
+    padding-top 15%
+
+@media (max-width 350px)
+  body
+    padding-top 20%
 </style>

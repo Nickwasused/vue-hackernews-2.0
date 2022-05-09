@@ -1,17 +1,20 @@
 const path = require('path')
+const webpack = require('webpack')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const { VueLoaderPlugin } = require('vue-loader')
 
 const isProd = process.env.NODE_ENV === 'production'
-const mode = process.env.NODE_ENV || 'development'
+const mode = process.env.NODE_ENV || 'development';
 // https://www.namecheap.com/blog/production-ready-vue-ssr-in-5-simple-steps/
 module.exports = {
-  devtool: 
-    'eval-source-map',
-    output: {
-      path: path.resolve(__dirname, '../dist'),
-      filename: '[name].[contenthash].js',
-      publicPath: '/dist/'
+  devtool: isProd
+    ? false
+    : '#cheap-module-source-map',
+  output: {
+    path: path.resolve(__dirname, '../dist'),
+    publicPath: '/dist/',
+    filename: '[name].[chunkhash].js'
   },
   mode,
   resolve: {
@@ -53,7 +56,7 @@ module.exports = {
         options: {
           limit: 10000,
           esModule: false,
-          name: '[name].[ext]?[contenthash]'
+          name: '[name].[ext]?[hash]'
         }
       },
       {
@@ -72,8 +75,7 @@ module.exports = {
                 require("postcss-import"),
                 //require("tailwindcss"),
                 require("autoprefixer")
-              ],
-              allChunks: true
+              ]
             }
           } 
         ],
@@ -93,6 +95,7 @@ module.exports = {
       ]
     : [
         new VueLoaderPlugin(),
-        new MiniCssExtractPlugin({})
+        new MiniCssExtractPlugin({}),
+        new FriendlyErrorsPlugin()
       ]
 }

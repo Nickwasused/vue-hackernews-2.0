@@ -1,7 +1,7 @@
 const webpack = require('webpack')
-const { merge } = require('webpack-merge')
+const merge = require('webpack-merge')
 const base = require('./webpack.base.config')
-const {GenerateSW} = require('workbox-webpack-plugin')
+const {GenerateSW} = require('workbox-webpack-plugin');
 const VueSSRClientPlugin = require('vue-server-renderer/client-plugin')
 
 const mode = process.env.NODE_ENV || 'development';
@@ -31,7 +31,7 @@ if (process.env.NODE_ENV === 'production') {
     // auto generate service worker
     new GenerateSW({
       cacheId: 'vue-hn',
-      swDest: 'service-worker.js',
+      swDest: './dist/service-worker.js',
       exclude: [/./, /\.map$/, /\.json$/],
       runtimeCaching: [
         {
