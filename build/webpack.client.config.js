@@ -33,6 +33,7 @@ if (process.env.NODE_ENV === 'production') {
       clientsClaim: true,
       skipWaiting: true,
       cacheId: 'vue-hn',
+      inlineWorkboxRuntime: true,
       swDest: 'service-worker.js',
       exclude: [/\.map$/, /\.json$/],
       runtimeCaching: [
