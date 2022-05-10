@@ -31,7 +31,7 @@ if (process.env.NODE_ENV === 'production') {
     // auto generate service worker
     new GenerateSW({
       cacheId: 'vue-hn',
-      swDest: './service-worker.js',
+      swDest: '/service-worker.js',
       exclude: [/\.map$/, /\.json$/],
       runtimeCaching: [
         {

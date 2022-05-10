@@ -8,8 +8,7 @@
     "start": "cross-env NODE_ENV=production node server",
     "build": "rimraf dist && npm run build:client && npm run build:server",
     "build:client": "cross-env NODE_ENV=production NODE_OPTIONS=--openssl-legacy-provider webpack --config build/webpack.client.config.js --progress",
-    "build:server": "cross-env NODE_ENV=production NODE_OPTIONS=--openssl-legacy-provider webpack --config build/webpack.server.config.js --progress",
-    "postinstall": "npm run build"
+    "build:server": "cross-env NODE_ENV=production NODE_OPTIONS=--openssl-legacy-provider webpack --config build/webpack.server.config.js --progress"
   },
   "engines": {
     "node": ">=16.0",
