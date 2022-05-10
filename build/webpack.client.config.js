@@ -30,6 +30,8 @@ if (process.env.NODE_ENV === 'production') {
   config.plugins.push(
     // auto generate service worker
     new GenerateSW({
+      clientsClaim: true,
+      skipWaiting: true,
       cacheId: 'vue-hn',
       swDest: 'service-worker.js',
       exclude: [/\.map$/, /\.json$/],
