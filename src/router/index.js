@@ -16,6 +16,7 @@ export function createRouter () {
     routes: [
       { path: '/top/:page(\\d+)?', component: createListView('top') },
       { path: '/new/:page(\\d+)?', component: createListView('new') },
+      { path: '/best/:page(\\d+)?', component: createListView('best') },
       { path: '/show/:page(\\d+)?', component: createListView('show') },
       { path: '/ask/:page(\\d+)?', component: createListView('ask') },
       { path: '/job/:page(\\d+)?', component: createListView('job') },
