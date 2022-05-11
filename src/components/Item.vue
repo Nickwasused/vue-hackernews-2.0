@@ -90,16 +90,20 @@ export default {
 
 @media (max-width 1400px)
   .mainitem
-    width 93%
+    flex 93%
 
   .mainscore
-    width 7%
+    flex 6%
 
 @media (max-width 600px)
   .mainitem
-    width 100%
+    flex 100%
+
+  .mainspacer
+    flex 0%
 
   .mainscore
+    flex 0%
     width 0%
     visibility hidden
 </style>
