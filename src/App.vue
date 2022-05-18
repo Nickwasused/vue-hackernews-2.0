@@ -11,7 +11,7 @@
         <router-link to="/show">Show</router-link>
         <router-link to="/ask">Ask</router-link>
         <router-link to="/job">Jobs</router-link>
-        <a class="github" href="https://github.com/nickwasused/vue-hackernews-2.0" target="_blank" rel="noopener">
+        <a class="github" href="https://github.com/nickwasused/vue-hackernews-2.0" target="_blank" rel="noopener noreferrer">
           Built with Vue.js
         </a>
       </nav>
