@@ -14,6 +14,9 @@
         <a class="github" href="https://github.com/nickwasused/vue-hackernews-2.0" target="_blank" rel="noopener noreferrer">
           Built with Vue.js
         </a>
+        <a href="https://hn.algolia.com/" target="_blank" rel="noopener noreferrer">
+          Search
+        </a>
       </nav>
     </header>
     <transition name="fade" mode="out-in">
