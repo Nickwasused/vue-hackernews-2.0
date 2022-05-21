@@ -14,7 +14,7 @@
         <a class="github" href="https://github.com/nickwasused/vue-hackernews-2.0" target="_blank" rel="noopener noreferrer">
           Built with Vue.js
         </a>
-        <a href="https://hn.algolia.com/" target="_blank" rel="noopener noreferrer">
+        <a class="search" href="https://hn.algolia.com/" target="_blank" rel="noopener noreferrer">
           Search
         </a>
       </nav>
@@ -75,6 +75,11 @@ a
     font-size .9em
     margin 0
     float right
+  .search
+    color #fff
+    font-size .9em
+    margin 0
+    float right
 
 .logo
   width 24px
@@ -107,5 +112,7 @@ a
     a
       margin-right 1em
     .github
+      display none
+    .search
       display none
 </style>
