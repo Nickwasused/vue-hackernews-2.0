@@ -34,6 +34,8 @@ export function createApp () {
     render: h => h(App)
   })
 
+  app.use('/robots.txt', express.static(path.join(__dirname, 'public/robots.txt')));
+
   // expose the app, the router and the store.
   // note we are not mounting the app here, since bootstrapping will be
   // different depending on whether we are in a browser or on the server.
