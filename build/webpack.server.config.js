@@ -3,18 +3,6 @@ const merge = require('webpack-merge')
 const base = require('./webpack.base.config')
 const nodeExternals = require('webpack-node-externals')
 const VueSSRServerPlugin = require('vue-server-renderer/server-plugin')
-const fs = require('fs');
-
-console.log('copying robots.txt');
-fs.readFile('robots.txt','utf8', readingFile);
-  
-function readingFile(error, data) {
-    if (error) {
-        console.log(error);
-    } else {
-        fs.writeFile('./dist/robots.txt', data, ()=> {});
-    } 
-}
 
 module.exports = merge(base, {
   target: 'node',
