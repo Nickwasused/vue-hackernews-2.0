@@ -86,6 +86,8 @@ function render (req, res) {
   const s = Date.now()
 
   res.setHeader("Content-Type", "text/html")
+  res.setHeader("Cache-Control", "public, max-age=60")
+  res.setHeader("X-Robots-Tag", "noindex")
   res.setHeader("Server", serverInfo)
 
   const handleError = err => {
